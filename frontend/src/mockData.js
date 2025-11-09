@@ -1,34 +1,32 @@
 export const portfolioData = {
   hero: {
-    badge: "AI & Data Engineering",
+    badge: "Differentiate or Die",
     name: "Suriyakanth R",
-    title: "AI & Data Engineering Professional",
+    title: "AI & Data Science Professional",
     tagline: "Specialized in Generative AI & Agentic Systems",
     description: "I build intelligent, scalable AI agent systems, backend infrastructures, and enterprise integrations that deliver real business impact.",
-    resumeLink: "#",
+    resumeLink: "https://github.com/iamsuriyakanth/portfolio/blob/main/suriyakanth-resume.pdf?raw=true",
     socialLinks: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com"
+     github: "https://github.com/iamsuriyakanth",
+     linkedin: "https://www.linkedin.com/in/suriyakanth2711/",
+     twitter: "https://x.com/Suriyakanth2711",
+     facebook: "https://www.facebook.com/iamsuriyakanth",
+     instagram: "https://www.instagram.com/iamsuriyakanth"
     }
   },
   about: {
-    description: "Results-oriented engineer focused on Generative AI implementations, agent frameworks, API-driven backend systems, and enterprise integrations. Experience working as founding engineer for AI agent platforms. Passionate about building end-to-end intelligent systems connecting models, data, APIs, and real-world business problems."
+    description: "Results-oriented AI and Data Engineering professional specializing in Generative AI implementations and enterprise integrations. Experienced in designing LLM-powered agents, API-driven workflows, and scalable backend systems that deliver measurable business outcomes. Passionate about bridging technical systems and customer impact — crafting, deploying, and optimizing AI agents that solve real business problems end-to-end."
   },
   techStack: {
     coreSkills: [
       "LLMs & NLP",
       "RAG Systems",
       "Agent Architectures",
-      "Agent Orchestration",
       "API Integrations",
       "Webhooks",
       "Data Engineering",
       "Data Pipelines",
       "Analytics",
-      "NL-to-SQL Systems"
     ],
     languages: [
       "Python",
@@ -88,27 +86,24 @@ export const portfolioData = {
   education: [
     {
       id: 1,
-      period: "2020 - 2024",
-      degree: "Bachelor of Technology in Computer Science",
-      institution: "Anna University",
-      location: "Tamil Nadu, India",
-      description: "Focused on Artificial Intelligence, Machine Learning, and Data Science. Graduated with First Class with Distinction.",
+      period: "2019 - 2024",
+      degree: "Masters in Data Science",
+      institution: "PSG College of Technology",
+      location: "Coimbatore, Tamil Nadu, India",
+      description: "Focused on Artificial Intelligence, Statistics, Stochastic Processes, Computational Finance, Machine Learning, and Data Science.",
       achievements: [
-        "GPA: 8.9/10",
-        "Published research paper on Agent-based Systems",
-        "Winner of Inter-college AI Hackathon 2023"
+        "GPA: 8.67/10",
+        "Graduated with First Class with Distinction.",
       ]
     },
     {
       id: 2,
-      period: "2018 - 2020",
+      period: "2017 - 2019",
       degree: "Higher Secondary Education",
-      institution: "State Board",
-      location: "Tamil Nadu, India",
-      description: "Specialized in Computer Science and Mathematics.",
+      institution: "Sathya Vidyalaya",
+      location: "Rajapalayam, Tamil Nadu, India",
+      description: "Specialized in Biology and Mathematics.",
       achievements: [
-        "Scored 95% in Computer Science",
-        "State rank holder in Mathematics Olympiad"
       ]
     }
   ],

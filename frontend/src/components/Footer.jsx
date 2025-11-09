@@ -40,15 +40,6 @@ const Footer = ({ socialLinks }) => {
 
         {/* Made with Emergent badge */}
         <div className="mt-6 flex justify-center">
-          <a
-            href="https://emergent.sh"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900/50 border border-gray-800 rounded-full text-sm text-gray-400 hover:text-cyan-400 hover:border-cyan-500/30 transition-all duration-300"
-          >
-            <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
-            Made with Emergent
-          </a>
         </div>
       </div>
     </footer>
