@@ -35,8 +35,8 @@ const About = ({ data }) => {
         }`}>
           {/* Section heading */}
           <div className="flex items-center gap-3 mb-12">
-            <User className="h-8 w-8 text-cyan-400" />
-            <h2 className="text-4xl md:text-5xl font-bold text-white">About Me</h2>
+            <User className="h-7 w-7 text-cyan-400" />
+            <h2 className="text-3xl md:text-4xl font-bold text-white">About Me</h2>
           </div>
 
           {/* Content card */}
