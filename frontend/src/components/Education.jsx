@@ -35,9 +35,9 @@ const Education = ({ data }) => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           {/* Section heading */}
-          <div className="flex items-center gap-3 mb-16">
-            <GraduationCap className="h-8 w-8 text-cyan-400" />
-            <h2 className="text-4xl md:text-5xl font-bold text-white">Education</h2>
+          <div className="flex items-center gap-3 mb-12">
+            <GraduationCap className="h-7 w-7 text-cyan-400" />
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Education</h2>
           </div>
 
           {/* Timeline */}
