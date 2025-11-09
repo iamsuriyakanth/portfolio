@@ -63,19 +63,19 @@ const Hero = ({ data }) => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button
               onClick={scrollToProjects}
-              className="bg-cyan-500 hover:bg-cyan-600 text-black font-medium px-6 py-3 text-sm rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/50 group"
+              className="bg-cyan-500 hover:bg-cyan-600 text-black font-medium px-7 py-3.5 text-base rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/50 group"
             >
               View Projects
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
               variant="outline"
-              className="border-2 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-medium px-6 py-3 text-sm rounded-lg transition-all duration-300 transform hover:scale-105 group"
+              className="border-2 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-medium px-7 py-3.5 text-base rounded-lg transition-all duration-300 transform hover:scale-105 group"
             >
-              <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" />
+              <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
               Download Resume
             </Button>
           </div>
