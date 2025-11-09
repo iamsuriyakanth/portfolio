@@ -55,6 +55,63 @@ export const portfolioData = {
       "Scikit-learn"
     ]
   },
+  projects: [
+    {
+      id: 1,
+      title: "AI Agent Platform",
+      description: "Built end-to-end AI agent orchestration platform with multi-LLM support, workflow automation, and enterprise integrations. Handles 10K+ daily agent executions.",
+      tags: ["Python", "FastAPI", "LLMs", "Agent Systems", "API Design"],
+      link: "#"
+    },
+    {
+      id: 2,
+      title: "RAG-Powered Knowledge Base",
+      description: "Developed intelligent document retrieval system using vector embeddings and semantic search. Reduced query response time by 60%.",
+      tags: ["Python", "Vector DB", "OpenAI", "RAG", "Embeddings"],
+      link: "#"
+    },
+    {
+      id: 3,
+      title: "NL-to-SQL Analytics Engine",
+      description: "Created natural language to SQL translation system supporting multiple database dialects. Enables non-technical users to query data using plain English.",
+      tags: ["NLP", "SQL", "LLMs", "Python", "Analytics"],
+      link: "#"
+    },
+    {
+      id: 4,
+      title: "Credit-Based Monetization System",
+      description: "Architected and implemented Stripe Connect integration with usage-based billing and credit management for AI agent platform.",
+      tags: ["Stripe", "FastAPI", "MongoDB", "Webhooks"],
+      link: "#"
+    }
+  ],
+  education: [
+    {
+      id: 1,
+      period: "2020 - 2024",
+      degree: "Bachelor of Technology in Computer Science",
+      institution: "Anna University",
+      location: "Tamil Nadu, India",
+      description: "Focused on Artificial Intelligence, Machine Learning, and Data Science. Graduated with First Class with Distinction.",
+      achievements: [
+        "GPA: 8.9/10",
+        "Published research paper on Agent-based Systems",
+        "Winner of Inter-college AI Hackathon 2023"
+      ]
+    },
+    {
+      id: 2,
+      period: "2018 - 2020",
+      degree: "Higher Secondary Education",
+      institution: "State Board",
+      location: "Tamil Nadu, India",
+      description: "Specialized in Computer Science and Mathematics.",
+      achievements: [
+        "Scored 95% in Computer Science",
+        "State rank holder in Mathematics Olympiad"
+      ]
+    }
+  ],
   experience: [
     {
       id: 1,
