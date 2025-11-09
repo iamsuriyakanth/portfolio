@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Download, Github, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
 import { Button } from './ui/button';
-import { Badge } from './ui/badge';
 
 const Hero = ({ data }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,7 +10,7 @@ const Hero = ({ data }) => {
   }, []);
 
   const scrollToProjects = () => {
-    document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const socialIcons = {
@@ -36,11 +35,11 @@ const Hero = ({ data }) => {
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}>
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
+          {/* Badge - Curved with border */}
           <div className="mb-8 inline-block animate-fade-in">
-            <Badge className="bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 px-4 py-2 text-sm font-medium hover:bg-cyan-500/20 transition-all duration-300">
+            <div className="bg-transparent border border-cyan-500/50 rounded-full px-5 py-2 text-sm font-medium text-cyan-400 hover:bg-cyan-500/10 transition-all duration-300">
               {data.badge}
-            </Badge>
+            </div>
           </div>
 
           {/* Main heading */}

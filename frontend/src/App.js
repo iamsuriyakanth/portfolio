@@ -4,7 +4,9 @@ import { Toaster } from "./components/ui/toaster";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import TechStack from "./components/TechStack";
+import Projects from "./components/Projects";
 import Experience from "./components/Experience";
+import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { portfolioData } from "./mockData";
@@ -20,7 +22,9 @@ function App() {
       <Hero data={portfolioData.hero} />
       <About data={portfolioData.about} />
       <TechStack data={portfolioData.techStack} />
+      <Projects data={portfolioData.projects} />
       <Experience data={portfolioData.experience} />
+      <Education data={portfolioData.education} />
       <Contact data={portfolioData.contact} />
       <Footer socialLinks={portfolioData.hero.socialLinks} />
       <Toaster />
