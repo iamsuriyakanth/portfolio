@@ -36,29 +36,29 @@ const Hero = ({ data }) => {
       }`}>
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge - Curved with border */}
-          <div className="mb-8 inline-block animate-fade-in">
-            <div className="bg-transparent border border-cyan-500/50 rounded-full px-5 py-2 text-sm font-medium text-cyan-400 hover:bg-cyan-500/10 transition-all duration-300">
+          <div className="mb-6 inline-block animate-fade-in">
+            <div className="bg-transparent border border-cyan-500/50 rounded-full px-4 py-1.5 text-xs font-normal text-cyan-400 hover:bg-cyan-500/10 transition-all duration-300">
               {data.badge}
             </div>
           </div>
 
           {/* Main heading */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight">
             {data.name}
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-400 mb-6">
+          <p className="text-lg md:text-xl text-gray-400 mb-3 font-normal">
             {data.title}
           </p>
 
           {/* Tagline */}
-          <h2 className="text-2xl md:text-3xl text-cyan-400 font-semibold mb-8 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="text-xl md:text-2xl text-cyan-400 font-medium mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
             {data.tagline}
           </h2>
 
           {/* Description */}
-          <p className="text-lg text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
             {data.description}
           </p>
 
