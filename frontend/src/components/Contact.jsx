@@ -65,9 +65,9 @@ const Contact = ({ data }) => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           {/* Section heading */}
-          <div className="flex items-center gap-3 mb-16">
-            <Mail className="h-8 w-8 text-cyan-400" />
-            <h2 className="text-4xl md:text-5xl font-bold text-white">Get In Touch</h2>
+          <div className="flex items-center gap-3 mb-12">
+            <Mail className="h-7 w-7 text-cyan-400" />
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Get In Touch</h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
