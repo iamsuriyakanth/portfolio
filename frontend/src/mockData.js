@@ -19,39 +19,57 @@ export const portfolioData = {
     description: "I’m a next-gen technology professional focused on building intelligent systems that bridge research, engineering, and real-world impact. My work centers on evolving AI from a tool that assists to a partner that executes — creating scalable, adaptable, and future-ready solutions."
   },
   techStack: {
-    coreSkills: [
-      "LLMs & NLP",
-      "RAG Systems",
-      "Agent Architectures",
-      "API Integrations",
-      "Webhooks",
-      "Data Engineering",
-      "Data Pipelines",
-      "Analytics",
-    ],
-    languages: [
+    programming: [
       "Python",
       "SQL",
       "TypeScript",
       "JavaScript",
       "C++",
+      "C",
       "R"
     ],
-    tools: [
-      "OpenAI",
-      "AWS",
-      "Vertex AI",
-      "GitHub",
-      "Stripe",
-      "Jenkins",
-      "Tableau"
+    ai_ml: [
+      "LLMs",
+      "NLP",
+      "MCP",
+      "Machine Learning",
+      "RAG",
+      "Agent Architectures",
+      "Agentic Workflows",
+      "Data Visualization",
+      "Statistical Modeling"
     ],
-    frameworks: [
+    frameworks_libraries: [
       "Flask",
       "FastAPI",
       "PyTorch",
       "TensorFlow",
-      "Scikit-learn"
+      "Scikit-learn",
+      "Pandas",
+      "Matplotlib",
+      "Plotly",
+      "D3.js"
+    ],
+    integrations: [
+      "API Integrations",
+      "Webhooks",
+      "Knowledge Bases",
+      "Database Connectors",
+      "Third-Party APIs",
+      "Enterprise Data Pipelines"
+    ],
+    tools_platforms: [
+      "OpenAI",
+      "AWS",
+      "Vertex AI",
+      "Azure",
+      "Stripe",
+      "Jenkins",
+      "GitHub",
+      "Jira",
+      "Confluence",
+      "Tableau",
+      "Postman"
     ]
   },
   projects: [
