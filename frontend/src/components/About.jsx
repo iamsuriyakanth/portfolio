@@ -180,19 +180,8 @@ const About = ({ data }) => {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
         }
-        @keyframes glow-pulse {
-          0%, 100% { 
-            box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
-          }
-          50% { 
-            box-shadow: 0 0 30px rgba(6, 182, 212, 0.4);
-          }
-        }
         .animate-spin-slow {
           animation: spin-slow 20s linear infinite;
-        }
-        .animate-glow-pulse {
-          animation: glow-pulse 2s ease-in-out infinite;
         }
       `}</style>
     </section>
