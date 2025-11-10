@@ -77,13 +77,14 @@ const Hero = ({ data }) => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button
-              onClick={scrollToProjects}
+              onClick={handleConnect}
               className="bg-cyan-500 hover:bg-cyan-600 text-black font-medium px-7 py-3.5 text-base rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/50 group"
             >
-              View Projects
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              Let's Connect
+              <Mail className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
             </Button>
             <Button
+              onClick={handleDownloadResume}
               variant="outline"
               className="border-2 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-medium px-7 py-3.5 text-base rounded-lg transition-all duration-300 transform hover:scale-105 group"
             >
