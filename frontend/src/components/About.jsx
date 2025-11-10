@@ -128,8 +128,8 @@ const About = ({ data }) => {
                   {data.description}
                 </p>
 
-                {/* Horizontal tab sections */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {/* Horizontal tab sections - 25-30% smaller */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {tabs.map((tab, idx) => {
                     const Icon = tab.icon;
                     const isActive = activeTab === idx;
@@ -138,29 +138,29 @@ const About = ({ data }) => {
                       <div
                         key={idx}
                         onClick={() => setActiveTab(idx)}
-                        className={`group cursor-pointer p-5 rounded-xl border transition-all duration-300 hover:scale-105 ${
+                        className={`group cursor-pointer p-3.5 rounded-xl border transition-all duration-300 hover:scale-105 ${
                           isActive 
                             ? 'bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-cyan-500/30 shadow-lg shadow-cyan-500/20' 
-                            : 'bg-white/[0.02] border-white/5 hover:border-cyan-500/20'
+                            : 'bg-white/[0.02] border-white/5 hover:border-cyan-500/20 hover:bg-gradient-to-br hover:from-cyan-500/5 hover:to-blue-500/5 hover:shadow-md hover:shadow-cyan-500/10'
                         }`}
                       >
-                        <div className="flex flex-col items-center text-center gap-3">
-                          <div className={`p-3 rounded-xl transition-all ${
+                        <div className="flex flex-col items-center text-center gap-2">
+                          <div className={`p-2 rounded-lg transition-all ${
                             isActive 
                               ? 'bg-cyan-500/20 border-2 border-cyan-500/40 shadow-lg shadow-cyan-500/30' 
                               : 'bg-white/5 border border-white/10 group-hover:bg-cyan-500/10 group-hover:border-cyan-500/20'
                           }`}>
-                            <Icon className={`h-5 w-5 transition-colors ${
+                            <Icon className={`h-4 w-4 transition-colors ${
                               isActive ? 'text-cyan-400' : 'text-gray-400 group-hover:text-cyan-400'
                             }`} />
                           </div>
                           <div>
-                            <div className={`text-sm font-semibold mb-1 ${
+                            <div className={`text-xs font-semibold mb-0.5 ${
                               isActive ? 'text-white' : 'text-gray-300 group-hover:text-white'
                             }`}>
                               {tab.label}
                             </div>
-                            <div className="text-xs text-gray-500">{tab.subtitle}</div>
+                            <div className="text-[10px] text-gray-500">{tab.subtitle}</div>
                           </div>
                         </div>
                       </div>
