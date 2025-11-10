@@ -92,8 +92,8 @@ const TechStack = ({ data }) => {
             </p>
           </div>
 
-          {/* Bento-style grid with varying sizes */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
+          {/* Bento-style grid - responsive layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {categories.map((category, index) => {
               const Icon = category.icon;
               const isHovered = hoveredCard === index;
