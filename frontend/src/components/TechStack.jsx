@@ -30,28 +30,34 @@ const TechStack = ({ data }) => {
 
   const categories = [
     {
-      title: "Core Skills",
-      icon: Braces,
-      items: data.coreSkills,
+      title: "Programming Languages",
+      icon: Code2,
+      items: data.programming,
       delay: 0
     },
     {
-      title: "Languages",
-      icon: Code2,
-      items: data.languages,
+      title: "AI & Machine Learning",
+      icon: Braces,
+      items: data.ai_ml,
       delay: 200
-    },
-    {
-      title: "Tools",
-      icon: Wrench,
-      items: data.tools,
-      delay: 400
     },
     {
       title: "Frameworks & Libraries",
       icon: Zap,
-      items: data.frameworks,
+      items: data.frameworks_libraries,
+      delay: 400
+    },
+    {
+      title: "Integrations",
+      icon: Wrench,
+      items: data.integrations,
       delay: 600
+    },
+    {
+      title: "Tools & Platforms",
+      icon: Wrench,
+      items: data.tools_platforms,
+      delay: 800
     }
   ];
 
