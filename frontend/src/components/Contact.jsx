@@ -35,11 +35,27 @@ const Contact = ({ data }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Portfolio Contact: ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:${data.email}?subject=${subject}&body=${body}`;
+    
+    // Open default email client
+    window.location.href = mailtoLink;
+    
+    // Show success toast
     toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+      title: "Opening email client...",
+      description: "Your default email app will open with the message ready to send.",
     });
-    setFormData({ name: '', email: '', message: '' });
+    
+    // Clear form after a short delay
+    setTimeout(() => {
+      setFormData({ name: '', email: '', message: '' });
+    }, 1000);
   };
 
   const handleChange = (e) => {
