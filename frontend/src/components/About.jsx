@@ -3,7 +3,7 @@ import { Settings, Zap, Lightbulb, Code2 } from 'lucide-react';
 
 const About = ({ data }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeTab, setActiveTab] = useState(null);
+  const [hoveredTab, setHoveredTab] = useState(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -26,20 +26,6 @@ const About = ({ data }) => {
       }
     };
   }, []);
-
-  // Auto-cycle through tabs when visible (innovation feature)
-  useEffect(() => {
-    if (!isVisible || activeTab !== null) return;
-
-    const interval = setInterval(() => {
-      setActiveTab((prev) => {
-        if (prev === null) return 0;
-        return (prev + 1) % 3;
-      });
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [isVisible, activeTab]);
 
   const tabs = [
     {
