@@ -15,7 +15,7 @@ export const portfolioData = {
     }
   },
   about: {
-    description: "Results-oriented AI and Data Engineering professional specializing in Generative AI implementations and enterprise integrations. Experienced in designing LLM-powered agents, API-driven workflows, and scalable backend systems that deliver measurable business outcomes. Passionate about bridging technical systems and customer impact — crafting, deploying, and optimizing AI agents that solve real business problems end-to-end."
+    description: "I’m a next-gen technology professional focused on building intelligent systems that bridge research, engineering, and real-world impact. My work centers on evolving AI from a tool that assists to a partner that executes — creating scalable, adaptable, and future-ready solutions."
   },
   techStack: {
     coreSkills: [
@@ -54,34 +54,30 @@ export const portfolioData = {
     ]
   },
   projects: [
+      {
+    "id": 1,
+    "title": "OptimBasket",
+    "description": "A Python-based portfolio optimization tool that uses Principal Component Analysis (PCA) to construct diversified and risk-optimized stock baskets. Implements algorithmic weight allocation to minimize exposure while maximizing variance reduction. Designed as a lightweight, data-driven assistant for retail and quantitative investors.",
+    "tags": [
+      "PCA",
+      "Portfolio Optimization",
+      "Risk Modeling"
+    ],
+    "link": "https://github.com/iamsuriyakanth/stockPrediction-strategyBuilding-portfolioConstruction"
+  },
     {
-      id: 1,
-      title: "AI Agent Platform",
-      description: "Built end-to-end AI agent orchestration platform with multi-LLM support, workflow automation, and enterprise integrations. Handles 10K+ daily agent executions.",
-      tags: ["Python", "FastAPI", "LLMs", "Agent Systems", "API Design"],
-      link: "#"
-    },
-    {
-      id: 2,
-      title: "RAG-Powered Knowledge Base",
-      description: "Developed intelligent document retrieval system using vector embeddings and semantic search. Reduced query response time by 60%.",
-      tags: ["Python", "Vector DB", "OpenAI", "RAG", "Embeddings"],
-      link: "#"
-    },
-    {
-      id: 3,
-      title: "NL-to-SQL Analytics Engine",
-      description: "Created natural language to SQL translation system supporting multiple database dialects. Enables non-technical users to query data using plain English.",
-      tags: ["NLP", "SQL", "LLMs", "Python", "Analytics"],
-      link: "#"
-    },
-    {
-      id: 4,
-      title: "Credit-Based Monetization System",
-      description: "Architected and implemented Stripe Connect integration with usage-based billing and credit management for AI agent platform.",
-      tags: ["Stripe", "FastAPI", "MongoDB", "Webhooks"],
-      link: "#"
-    }
+    "id": 2,
+    "title": "Manifesto AI",
+    "description": "AI-powered tool that ingests lengthy political manifestos and converts them into concise, citizen-friendly summaries. Uses LLM-driven retrieval and compression techniques to extract key policy points, compare party positions, and provide easy-to-understand breakdowns for informed voting.",
+    "tags": [
+      "LLMs",
+      "RAG",
+      "Political Analysis",
+      "AI for Social Good"
+    ],
+    "link": "https://github.com/iamsuriyakanth/manifesto-lens"
+  },
+
   ],
   education: [
     {
@@ -108,37 +104,82 @@ export const portfolioData = {
     }
   ],
   experience: [
-    {
-      id: 1,
-      period: "2024 - Present",
-      isCurrent: true,
-      position: "Member Technical Staff",
-      company: "Haiva Inc",
-      location: "Tamil Nadu, India",
-      description: "Built scalable backend services for AI agent workflows. Architected agent orchestration frameworks. Designed Generative AI pipelines across multiple LLM providers. Created API integration layer & universal webhook handler. Delivered credit-based monetization + Stripe Connect workflows. Built reusable templates enabling fast agent deployment. Led Azure Marketplace integration.",
-      tags: ["Python", "FastAPI", "LLMs", "Agent Systems", "API Design", "Stripe", "Azure"]
-    },
-    {
-      id: 2,
-      period: "2023 - 2024",
-      isCurrent: false,
-      position: "Developer Intern",
-      company: "Linx Works",
-      location: "Tamil Nadu, India",
-      description: "Implemented conversational NL-to-SQL analytics assistant. Designed prompt-based workflows for query translation. Built multi-dialect query engine. Integrated real-time dashboards (D3.js, Chart.js).",
-      tags: ["NLP", "SQL", "Python", "D3.js", "Chart.js", "Analytics"]
-    },
-    {
-      id: 3,
-      period: "2022",
-      isCurrent: false,
-      position: "Data Analyst Intern",
-      company: "Saks Off 5th",
-      location: "Tamil Nadu, India",
-      description: "Analyzed customer behavior patterns. Built predictive models for inventory optimization. Created interactive dashboards for stakeholder insights.",
-      tags: ["Python", "Pandas", "Tableau", "SQL", "Analytics"]
-    }
-  ],
+  {
+    "id": 1,
+    "period": "June 2024 - Present",
+    "isCurrent": true,
+    "position": "Member Technical Staff",
+    "company": "Haiva Inc",
+    "location": "Chennai, Tamil Nadu, India",
+    "description": "Founding engineer contributing to the core Adaptive AI Agent platform. Built scalable backend systems, agentic layers, and multi-modal LLM pipelines powering enterprise-grade automations. Delivered plug-and-play integrations, real-time webhook infrastructure, and implemented Microsoft Marketplace onboarding with Azure Metering integration. Built credit-based and subscription-based monetization systems alongside iOS in-app monetization flows. Developed a universal parser optimized for LLM processing and created reusable agent-template pipelines enabling rapid configuration and deployment of customer-ready AI agents—significantly enhancing platform scalability, onboarding speed, and enterprise adoption.",
+    "tags": [
+      "AI Agents",
+      "LLMs",
+      "Adaptive Agents",
+      "Backend Engineering",
+      "FastAPI",
+      "Python",
+      "Integrations",
+      "Webhooks",
+      "Universal Parser",
+      "Agent Templates",
+      "Azure Metering",
+      "Microsoft Marketplace",
+      "Credit-Based Billing",
+      "Subscription Billing",
+      "iOS Monetization"
+    ]
+  },
+  {
+    "id": 2,
+    "period": "Dec 2023 – May 2024",
+    "isCurrent": false,
+    "position": "Developer Intern",
+    "company": "Linx Works (apiplatform.io)",
+    "location": "Bangalore, Karnataka, India",
+    "description": "Developed intelligent systems for an AI-powered conversational analytics assistant. Built NLP → SQL pipelines using transformer models, abstracted multi-dialect SQL execution, and improved query accuracy through iterative customer feedback loops. Enabled real-time data visualization through dynamic charting pipelines integrated into web and mobile applications.",
+    "tags": [
+      "NLP",
+      "LLMs",
+      "SQL Generation",
+      "Transformer Models",
+      "Natural Language Interfaces",
+      "Python",
+      "Backend Development",
+      "Analytics Assistant",
+      "Multi-dialect SQL",
+      "Query Execution Engine",
+      "Data Pipelines",
+      "Chart.js",
+      "D3.js",
+      "Highcharts",
+      "Real-time Visualization"]
+  },
+  {
+    "id": 3,
+    "period": "June 2022 – Dec 2022",
+    "isCurrent": false,
+    "position": "Data Analyst Intern",
+    "company": "Saks Off 5th",
+    "location": "Bangalore, Karnataka, India",
+    "description": "Executed customer analytics projects focusing on segmentation, conversion funnel insights, and churn prediction. Built behavioral cohorts using clustering + RFM, improving targeting effectiveness. Designed attrition models and early-warning KPIs to reduce churn. Identified UX opportunities that improved session time by 19% and strengthened retention strategies across lifecycle campaigns.",
+    "tags": [
+      "Customer Segmentation",
+      "RFM Analysis",
+      "Clustering",
+      "Conversion Funnel Analysis",
+      "Churn Prediction",
+      "Retention Analytics",
+      "Behavioral Insights",
+      "KPI Design",
+      "Attrition Modeling",
+      "E-commerce Analytics",
+      "UX Analytics",
+      "Lifecycle Campaigns",
+      "Engagement Metrics"
+    ]
+  }
+],
   contact: {
     location: "Tamil Nadu, India",
     email: "iam.suriyakanth@gmail.com",
