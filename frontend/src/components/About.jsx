@@ -3,7 +3,7 @@ import { Settings, Zap, Lightbulb, Code2 } from 'lucide-react';
 
 const About = ({ data }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
