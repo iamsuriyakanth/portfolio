@@ -125,9 +125,9 @@ const Experience = ({ data }) => {
                         {/* Description */}
                         <p className="text-gray-300 leading-relaxed mb-6 text-sm">{job.description}</p>
 
-                        {/* Tags - pill style */}
+                        {/* Tags - pill style with expand */}
                         <div className="flex flex-wrap gap-2">
-                          {job.tags.slice(0, 8).map((tag, idx) => (
+                          {(expandedJobs[job.id] ? job.tags : job.tags.slice(0, 8)).map((tag, idx) => (
                             <span
                               key={idx}
                               className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-white/5 text-gray-300 border border-white/10 hover:bg-white/10 hover:border-cyan-500/30 hover:text-cyan-400 transition-all duration-300 cursor-default backdrop-blur-sm"
@@ -136,9 +136,12 @@ const Experience = ({ data }) => {
                             </span>
                           ))}
                           {job.tags.length > 8 && (
-                            <span className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                              +{job.tags.length - 8} more
-                            </span>
+                            <button
+                              onClick={() => toggleExpanded(job.id)}
+                              className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 hover:bg-cyan-500/20 hover:border-cyan-500/30 transition-all duration-300 cursor-pointer"
+                            >
+                              {expandedJobs[job.id] ? 'Show less' : `+${job.tags.length - 8} more`}
+                            </button>
                           )}
                         </div>
                       </div>
