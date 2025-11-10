@@ -4,7 +4,15 @@ import { Rocket, Calendar, MapPin, Building2 } from 'lucide-react';
 const Experience = ({ data }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [expandedJobs, setExpandedJobs] = useState({});
   const sectionRef = useRef(null);
+
+  const toggleExpanded = (jobId) => {
+    setExpandedJobs(prev => ({
+      ...prev,
+      [jobId]: !prev[jobId]
+    }));
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
