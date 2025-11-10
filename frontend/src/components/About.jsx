@@ -152,14 +152,14 @@ const About = ({ data }) => {
                       <div
                         key={idx}
                         onClick={() => setActiveTab(idx)}
-                        className={`group cursor-pointer p-3.5 rounded-xl border transition-all duration-300 hover:scale-105 ${
+                        className={`group cursor-pointer p-3.5 rounded-xl border transition-all duration-500 hover:scale-105 ${
                           isActive 
-                            ? 'bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-cyan-500/30 shadow-lg shadow-cyan-500/20' 
+                            ? 'bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-cyan-500/30 shadow-lg shadow-cyan-500/20 animate-glow-pulse' 
                             : 'bg-white/[0.02] border-white/5 hover:border-cyan-500/20 hover:bg-gradient-to-br hover:from-cyan-500/5 hover:to-blue-500/5 hover:shadow-md hover:shadow-cyan-500/10'
                         }`}
                       >
                         <div className="flex flex-col items-center text-center gap-2">
-                          <div className={`p-2 rounded-lg transition-all ${
+                          <div className={`p-2 rounded-lg transition-all duration-300 ${
                             isActive 
                               ? 'bg-cyan-500/20 border-2 border-cyan-500/40 shadow-lg shadow-cyan-500/30' 
                               : 'bg-white/5 border border-white/10 group-hover:bg-cyan-500/10 group-hover:border-cyan-500/20'
@@ -169,7 +169,7 @@ const About = ({ data }) => {
                             }`} />
                           </div>
                           <div>
-                            <div className={`text-xs font-semibold mb-0.5 ${
+                            <div className={`text-xs font-semibold mb-0.5 transition-colors ${
                               isActive ? 'text-white' : 'text-gray-300 group-hover:text-white'
                             }`}>
                               {tab.label}
@@ -177,6 +177,20 @@ const About = ({ data }) => {
                             <div className="text-[10px] text-gray-500">{tab.subtitle}</div>
                           </div>
                         </div>
+                        
+                        {/* Progress indicator for auto-cycle */}
+                        {isActive && (
+                          <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-1">
+                            {[0, 1, 2].map((dot) => (
+                              <div
+                                key={dot}
+                                className={`w-1 h-1 rounded-full transition-all duration-300 ${
+                                  dot === idx ? 'bg-cyan-400 w-3' : 'bg-gray-600'
+                                }`}
+                              />
+                            ))}
+                          </div>
+                        )}
                       </div>
                     );
                   })}
