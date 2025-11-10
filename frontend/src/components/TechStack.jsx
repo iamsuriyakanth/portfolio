@@ -101,34 +101,82 @@ const TechStack = ({ data }) => {
   };
 
   return (
-    <section id="tech-stack" ref={sectionRef} className="py-32 bg-black relative overflow-hidden min-h-screen flex items-center">
+    <section id="tech-stack" ref={sectionRef} className="py-16 md:py-20 bg-black relative overflow-hidden">
       {/* Premium background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_60%,transparent_100%)] opacity-20"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-[150px] animate-pulse"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[150px] animate-pulse"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className={`max-w-7xl mx-auto transition-all duration-1000 ${
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className={`max-w-6xl mx-auto transition-all duration-1000 ${
           isVisible ? 'opacity-100' : 'opacity-0'
         }`}>
           
           {/* Circular Layout */}
           <div className="relative">
             
-            {/* Central Hub */}
-            <div className="flex flex-col items-center justify-center mb-16 lg:mb-0">
-              <div className="relative w-full max-w-[900px] aspect-square mx-auto flex items-center justify-center">
+            {/* Mobile: Grid Layout */}
+            <div className="block md:hidden">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full backdrop-blur-xl mb-4">
+                  <Code2 className="h-4 w-4 text-cyan-400" />
+                  <span className="text-xs font-medium text-cyan-400">Technology Arsenal</span>
+                </div>
+                <h2 className="text-3xl font-bold text-white mb-2 tracking-tight bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent">
+                  Tech Stack
+                </h2>
+                <p className="text-gray-400 text-sm">
+                  Tap any category to explore
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                {categories.map((category, idx) => {
+                  const Icon = category.icon;
+                  const colors = colorMap[category.color];
+                  const isActive = activeCategory === category.id;
+
+                  return (
+                    <div
+                      key={category.id}
+                      onClick={() => setActiveCategory(isActive ? null : category.id)}
+                      className={`relative cursor-pointer transition-all duration-500 ${
+                        isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+                      }`}
+                      style={{ transitionDelay: `${idx * 100}ms` }}
+                    >
+                      <div className={`absolute inset-0 ${colors.bg}/20 rounded-xl blur-xl ${isActive ? 'animate-pulse' : ''}`}></div>
+                      <div className={`relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-xl border-2 ${isActive ? `${colors.border}/50` : 'border-white/10'} p-4`}>
+                        <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                        <div className="flex flex-col items-center gap-2">
+                          <div className={`p-2.5 ${colors.bg}/20 rounded-lg ${isActive ? `${colors.border}/30 shadow-lg ${colors.glow}/50` : ''} border ${colors.border}/20`}>
+                            <Icon className={`h-5 w-5 ${colors.text}`} />
+                          </div>
+                          <div className={`text-xs font-bold ${isActive ? colors.text : 'text-white'}`}>
+                            {category.shortTitle}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Desktop: Circular Layout */}
+            <div className="hidden md:flex flex-col items-center justify-center">
+              <div className="relative w-full max-w-[550px] aspect-square mx-auto flex items-center justify-center">
                 
                 {/* Orbital rings */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  {[1, 2, 3].map((ring, idx) => (
+                  {[1, 2].map((ring, idx) => (
                     <div
                       key={ring}
                       className="absolute rounded-full border border-white/5"
                       style={{
-                        width: `${30 + idx * 25}%`,
-                        height: `${30 + idx * 25}%`,
+                        width: `${40 + idx * 30}%`,
+                        height: `${40 + idx * 30}%`,
                         animation: `spin-slow ${30 + idx * 10}s linear infinite ${idx % 2 === 0 ? 'reverse' : ''}`
                       }}
                     />
@@ -136,18 +184,18 @@ const TechStack = ({ data }) => {
                 </div>
 
                 {/* Center Title */}
-                <div className="relative z-20 text-center">
-                  <div className="mb-6">
-                    <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full backdrop-blur-xl">
-                      <Code2 className="h-5 w-5 text-cyan-400" />
-                      <span className="text-sm font-medium text-cyan-400">Technology Arsenal</span>
+                <div className="relative z-20 text-center max-w-[200px]">
+                  <div className="mb-4">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full backdrop-blur-xl">
+                      <Code2 className="h-4 w-4 text-cyan-400" />
+                      <span className="text-xs font-medium text-cyan-400">Arsenal</span>
                     </div>
                   </div>
-                  <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent">
                     Tech Stack
                   </h2>
-                  <p className="text-gray-400 text-base max-w-md mx-auto">
-                    Click on any category to explore
+                  <p className="text-gray-400 text-xs">
+                    Click to explore
                   </p>
                 </div>
 
@@ -156,7 +204,7 @@ const TechStack = ({ data }) => {
                   const Icon = category.icon;
                   const colors = colorMap[category.color];
                   const isActive = activeCategory === category.id;
-                  const radius = 42; // percentage
+                  const radius = 38; // percentage - reduced from 42
                   const position = getOrbitPosition(category.angle + rotation * 0.3, radius);
 
                   return (
@@ -175,17 +223,17 @@ const TechStack = ({ data }) => {
                       }}
                     >
                       {/* Glow effect */}
-                      <div className={`absolute inset-0 ${colors.bg}/20 rounded-2xl blur-2xl ${isActive ? 'animate-pulse' : ''}`}></div>
+                      <div className={`absolute inset-0 ${colors.bg}/20 rounded-xl blur-xl ${isActive ? 'animate-pulse' : ''}`}></div>
 
                       {/* Node */}
                       <div className={`relative group ${isActive ? 'scale-110' : 'hover:scale-110'} transition-transform duration-300`}>
-                        <div className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl border-2 ${isActive ? `${colors.border}/50` : 'border-white/10'} p-4 min-w-[120px]`}>
+                        <div className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-xl border-2 ${isActive ? `${colors.border}/50` : 'border-white/10'} p-3 min-w-[90px]`}>
                           {/* Top shine */}
                           <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
                           
                           <div className="flex flex-col items-center gap-2">
-                            <div className={`p-3 ${colors.bg}/20 rounded-xl ${isActive ? `${colors.border}/30 shadow-lg ${colors.glow}/50` : ''} border ${colors.border}/20 transition-all`}>
-                              <Icon className={`h-6 w-6 ${colors.text}`} />
+                            <div className={`p-2 ${colors.bg}/20 rounded-lg ${isActive ? `${colors.border}/30 shadow-lg ${colors.glow}/50` : ''} border ${colors.border}/20 transition-all`}>
+                              <Icon className={`h-5 w-5 ${colors.text}`} />
                             </div>
                             <div className="text-center">
                               <div className={`text-xs font-bold ${isActive ? colors.text : 'text-white'} transition-colors`}>
@@ -201,7 +249,7 @@ const TechStack = ({ data }) => {
                           style={{
                             height: '2px',
                             transform: `rotate(${-category.angle - rotation * 0.3}deg)`,
-                            width: `${radius * 4.5}px`
+                            width: `${radius * 3.5}px`
                           }}
                         />
                       </div>
@@ -211,31 +259,30 @@ const TechStack = ({ data }) => {
               </div>
             </div>
 
-            {/* Expanded Content */}
+            {/* Expanded Content - appears within view */}
             {activeCategory && (
-              <div className="mt-12 animate-fade-in">
+              <div className="mt-8 animate-fade-in">
                 {categories
                   .filter(cat => cat.id === activeCategory)
                   .map(category => {
                     const colors = colorMap[category.color];
                     return (
-                      <div key={category.id} className="max-w-5xl mx-auto">
+                      <div key={category.id} className="max-w-4xl mx-auto">
                         <div className="relative group">
                           {/* Glow */}
-                          <div className={`absolute inset-0 ${colors.bg}/10 rounded-2xl blur-2xl`}></div>
+                          <div className={`absolute inset-0 ${colors.bg}/10 rounded-xl blur-xl`}></div>
                           
                           {/* Content card */}
-                          <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl border border-white/10 p-8">
+                          <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-xl border border-white/10 p-6">
                             {/* Top shine */}
                             <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
                             
-                            <h3 className={`text-2xl font-bold ${colors.text} mb-6`}>{category.title}</h3>
-                            <div className="flex flex-wrap gap-3">
+                            <h3 className={`text-xl font-bold ${colors.text} mb-4`}>{category.title}</h3>
+                            <div className="flex flex-wrap gap-2">
                               {category.items.map((item, idx) => (
                                 <span
                                   key={idx}
-                                  className={`inline-flex items-center px-4 py-2 text-sm font-medium rounded-full bg-white/5 text-gray-300 border border-white/10 hover:bg-white/10 hover:${colors.border}/30 hover:${colors.text} transition-all duration-300 cursor-default backdrop-blur-sm`}
-                                  style={{ animationDelay: `${idx * 30}ms` }}
+                                  className={`inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-full bg-white/5 text-gray-300 border border-white/10 hover:bg-white/10 hover:${colors.border}/30 hover:${colors.text} transition-all duration-300 cursor-default backdrop-blur-sm`}
                                 >
                                   {item}
                                 </span>
