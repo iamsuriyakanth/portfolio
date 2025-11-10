@@ -113,7 +113,7 @@ frontend:
   - task: "Add Kaggle social icon"
     implemented: true
     working: "NA"
-    file: "/app/frontend/src/components/Hero.jsx, /app/frontend/src/mockData.js"
+    file: "/app/frontend/src/components/Hero.jsx, /app/frontend/src/components/Footer.jsx, /app/frontend/src/mockData.js"
     stuck_count: 0
     priority: "high"
     needs_retesting: true
@@ -121,6 +121,9 @@ frontend:
       - working: "NA"
         agent: "main"
         comment: "Added Kaggle icon (custom SVG) to Hero component and added Kaggle link to mockData.js socialLinks"
+      - working: "NA"
+        agent: "main"
+        comment: "Fixed white screen error - added Kaggle icon to Footer component as well since it also renders social icons"
 
   - task: "Fix Download Resume button"
     implemented: true
