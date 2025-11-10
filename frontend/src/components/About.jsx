@@ -27,6 +27,20 @@ const About = ({ data }) => {
     };
   }, []);
 
+  // Auto-cycle through tabs when visible (innovation feature)
+  useEffect(() => {
+    if (!isVisible || activeTab !== null) return;
+
+    const interval = setInterval(() => {
+      setActiveTab((prev) => {
+        if (prev === null) return 0;
+        return (prev + 1) % 3;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isVisible, activeTab]);
+
   const tabs = [
     {
       icon: Settings,
