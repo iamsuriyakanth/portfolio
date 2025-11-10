@@ -11,7 +11,8 @@ export const portfolioData = {
      linkedin: "https://www.linkedin.com/in/suriyakanth2711/",
      twitter: "https://x.com/Suriyakanth2711",
      facebook: "https://www.facebook.com/iamsuriyakanth",
-     instagram: "https://www.instagram.com/iamsuriyakanth"
+     instagram: "https://www.instagram.com/iamsuriyakanth",
+     kaggle: "https://www.kaggle.com/suriyakanth2711"
     }
   },
   about: {
