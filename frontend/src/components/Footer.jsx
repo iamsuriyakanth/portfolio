@@ -24,8 +24,9 @@ const Footer = ({ socialLinks }) => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           {/* Copyright */}
           <p className="text-gray-400 text-sm">
-            © 2025 Suriyakanth R. Built with passion for AI and Innovation.
+            © 2026 Suriyakanth Raja.
           </p>
+
 
           {/* Social links */}
           <div className="flex gap-6">
