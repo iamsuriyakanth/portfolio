@@ -1,207 +1,177 @@
 export const portfolioData = {
   hero: {
-    badge: "Differentiate or Die",
-    name: "Suriyakanth R",
-    title: "AI & Data Science Professional",
-    tagline: "Specialized in Generative AI & Agentic Systems",
-    description: "I build intelligent, scalable AI agent systems, backend infrastructures, and enterprise integrations that deliver real business impact.",
-    resumeLink: "https://github.com/iamsuriyakanth/portfolio/blob/main/suriyakanth-resume.pdf?raw=true",
+    headline: "I build intelligent systems and intuitive digital products.",
+    subtext: "Software Engineer & Designer. Focused on bridging the gap between complex algorithms and seamless user experiences.",
+    cta: "View My Work",
     socialLinks: {
-     github: "https://github.com/iamsuriyakanth",
-     linkedin: "https://www.linkedin.com/in/suriyakanth2711/",
-     twitter: "https://x.com/Suriyakanth2711",
-     facebook: "https://www.facebook.com/iamsuriyakanth",
-     instagram: "https://www.instagram.com/iamsuriyakanth",
-     kaggle: "https://www.kaggle.com/suriyakanth2711"
+      github: "https://github.com/iamsuriyakanth",
+      linkedin: "https://www.linkedin.com/in/suriyakanth2711/",
+      twitter: "https://x.com/Suriyakanth2711"
     }
   },
-  about: {
-    description: "I’m a next-gen technology professional focused on building intelligent systems that bridge research, engineering, and real-world impact. My work centers on evolving AI from a tool that assists to a partner that executes — creating scalable, adaptable, and future-ready solutions."
-  },
-  techStack: {
-    programming: [
-      "Python",
-      "SQL",
-      "TypeScript",
-      "JavaScript",
-      "C++",
-      "C",
-      "R"
-    ],
-    ai_ml: [
-      "LLMs",
-      "NLP",
-      "MCP",
-      "Machine Learning",
-      "RAG",
-      "Agent Architectures",
-      "Agentic Workflows",
-      "Data Visualization",
-      "Statistical Modeling"
-    ],
-    frameworks_libraries: [
-      "Flask",
-      "FastAPI",
-      "PyTorch",
-      "TensorFlow",
-      "Scikit-learn",
-      "Pandas",
-      "Matplotlib",
-      "Plotly",
-      "D3.js"
-    ],
-    integrations: [
-      "API Integrations",
-      "Webhooks",
-      "Knowledge Bases",
-      "Database Connectors",
-      "Third-Party APIs",
-      "Enterprise Data Pipelines"
-    ],
-    tools_platforms: [
-      "OpenAI",
-      "AWS",
-      "Vertex AI",
-      "Azure",
-      "Stripe",
-      "Jenkins",
-      "GitHub",
-      "Jira",
-      "Confluence",
-      "Tableau",
-      "Postman"
-    ]
-  },
-  projects: [
-      {
-    "id": 1,
-    "title": "OptimBasket",
-    "description": "A Python-based portfolio optimization tool that uses Principal Component Analysis (PCA) to construct diversified and risk-optimized stock baskets. Implements algorithmic weight allocation to minimize exposure while maximizing variance reduction. Designed as a lightweight, data-driven assistant for retail and quantitative investors.",
-    "tags": [
-      "PCA",
-      "Portfolio Optimization",
-      "Risk Modeling"
-    ],
-    "link": "https://github.com/iamsuriyakanth/stockPrediction-strategyBuilding-portfolioConstruction"
-  },
+  capabilities: [
     {
-    "id": 2,
-    "title": "Manifesto AI",
-    "description": "AI-powered tool that ingests lengthy political manifestos and converts them into concise, citizen-friendly summaries. Uses LLM-driven retrieval and compression techniques to extract key policy points, compare party positions, and provide easy-to-understand breakdowns for informed voting.",
-    "tags": [
-      "LLMs",
-      "RAG",
-      "Political Analysis",
-      "AI for Social Good"
-    ],
-    "link": "https://github.com/iamsuriyakanth/manifesto-lens"
-  },
-
-  ],
-  education: [
-    {
-      id: 1,
-      period: "2019 - 2024",
-      degree: "Masters in Data Science",
-      institution: "PSG College of Technology",
-      location: "Coimbatore, Tamil Nadu, India",
-      description: "Focused on Artificial Intelligence, Statistics, Stochastic Processes, Computational Finance, Machine Learning, and Data Science.",
-      achievements: [
-        "GPA: 8.67/10",
-        "Graduated with First Class with Distinction.",
-      ]
+      id: "llm",
+      title: "LLM-powered workflows",
+      description: "End-to-end agentic systems that automate complex reasoning tasks beyond simple retrieval.",
+      icon: "Cpu",
+      details: "Building agentic systems that bridge research and engineering for enterprise-scale automation."
     },
     {
-      id: 2,
-      period: "2017 - 2019",
-      degree: "Higher Secondary Education",
-      institution: "Sathya Vidyalaya",
-      location: "Rajapalayam, Tamil Nadu, India",
-      description: "Specialized in Biology and Mathematics.",
-      achievements: [
-      ]
+      id: "product",
+      title: "0→1 Product Systems",
+      description: "Turning ideas into scalable, production-ready systems from first principles.",
+      icon: "Layers",
+      details: "Architecting foundation models and scalable backend infrastructure from perfectly blank slates."
+    },
+    {
+      id: "growth",
+      title: "Growth intelligence systems",
+      description: "Data-driven engines designed to optimize conversion funnels and lifecycle retention.",
+      icon: "TrendingUp",
+      details: "Using predictive modeling to identify high-impact growth levers and customer behavioral shifts."
+    },
+    {
+      id: "behavioral",
+      title: "Behavioral Systems",
+      description: "Modeling user intent to predict actions and drive proactive product decisions.",
+      icon: "Activity",
+      details: "Transforming raw audit logs into actionable behavioral cohorts and attrition models."
     }
   ],
-  experience: [
-  {
-    "id": 1,
-    "period": "June 2024 - Present",
-    "isCurrent": true,
-    "position": "Member Technical Staff",
-    "company": "Haiva Inc",
-    "location": "Chennai, Tamil Nadu, India",
-    "description": "Founding engineer contributing to the core Adaptive AI Agent platform. Built scalable backend systems, agentic layers, and multi-modal LLM pipelines powering enterprise-grade automations. Delivered plug-and-play integrations, real-time webhook infrastructure, and implemented Microsoft Marketplace onboarding with Azure Metering integration. Built credit-based and subscription-based monetization systems alongside iOS in-app monetization flows. Developed a universal parser optimized for LLM processing and created reusable agent-template pipelines enabling rapid configuration and deployment of customer-ready AI agents—significantly enhancing platform scalability, onboarding speed, and enterprise adoption.",
-    "tags": [
-      "AI Agents",
-      "LLMs",
-      "Adaptive Agents",
-      "Backend Engineering",
-      "FastAPI",
-      "Python",
-      "Integrations",
-      "Webhooks",
-      "Universal Parser",
-      "Agent Templates",
-      "Azure Metering",
-      "Microsoft Marketplace",
-      "Credit-Based Billing",
-      "Subscription Billing",
-      "iOS Monetization"
-    ]
+  selectedWork: [
+    {
+      id: "haiva",
+      company: "Haiva Inc",
+      url: "https://www.haiva.ai",
+      logo: "haiva.png",
+      role: "Member of Technical Staff",
+      descriptor: "Founding Engineer",
+      period: "Jun 2024 - Present",
+      location: "Chennai, India",
+      systems: [
+        {
+          name: "Agentic AI Pipelines",
+          description: "Designed pipelines enabling users to build, deploy, and orchestrate AI agents, reducing manual workflows by 30–50%."
+        },
+        {
+          name: "Plug-and-play Integrations",
+          description: "Built real-time webhook systems, reducing integration time by 40% and enabling seamless external apps connectivity."
+        },
+        {
+          name: "Agent Template Frameworks",
+          description: "Developed reusable templates and frameworks, accelerating agent development and deployment cycles by 2–3x."
+        },
+        {
+          name: "Enterprise Solutions",
+          description: "Collaborated directly with enterprise clients to understand use cases, shape solutions, and drive successful AI adoption."
+        }
+      ],
+      stack: ["Agentic Orchestration", "LLMs", "FastAPI", "Python"]
+    },
+    {
+      id: "apiplatform",
+      company: "Linx Works - apiplatform.io",
+      url: "https://apiplatform.io",
+      logo: "apiplatform.png",
+      role: "Student Intern",
+      descriptor: "Backend & AI Engineering",
+      period: "Dec 2023 - Jun 2024",
+      location: "Bengaluru, India",
+      systems: [
+        {
+          name: "Conversational Analytics Assistant",
+          description: "Engineered backend for a conversational AI analytics assistant enabling real-time NL → SQL → Data insights."
+        },
+        {
+          name: "NLP-driven Pipelines",
+          description: "Built pipelines converting business queries into SQL with improved accuracy and reduced manual effort by ~60%."
+        },
+        {
+          name: "Multi-dialect Query Engine",
+          description: "Developed engine (PostgreSQL, MySQL, BigQuery) enabling cross-platform analytics from a single interface."
+        },
+        {
+          name: "Real-time Data Visualization",
+          description: "Integrated real-time insights (Chart.js, D3.js), improving decision-making speed by ~30%."
+        }
+      ],
+      stack: ["Data Analysis", "SQL Gen", "PostgreSQL", "Python", "D3.js"]
+    },
+    {
+      id: "saks",
+      company: "Saks OFF 5TH",
+      url: "https://www.saksoff5th.com",
+      logo: "saks.png",
+      role: "Data Analyst",
+      descriptor: "Data Science Intern",
+      period: "Jun 2022 - Dec 2022",
+      location: "Bengaluru, India",
+      systems: [
+        {
+          name: "Customer Segmentation",
+          description: "Applied customer segmentation using clustering and RFM analysis for targeted marketing."
+        },
+        {
+          name: "Attrition Prediction Models",
+          description: "Performed funnel analysis and developed models to precisely identify at-risk users."
+        },
+        {
+          name: "Early-warning KPIs",
+          description: "Designed early-warning metrics to instantly detect drop-offs in conversion and engagement."
+        },
+        {
+          name: "UX Insights Engine",
+          description: "Delivered actionable insights and UX improvements, increasing session time by ~19%."
+        }
+      ],
+      stack: ["Clustering", "RFM Analytics", "Python", "KPI Design"]
+    }
+  ],
+  lab: [
+    {
+      id: "vibe-architect",
+      title: "Vibe Architect",
+      status: "Production",
+      url: "https://vibearchitect.io",
+      summary: "An elite system design tool transforming abstract ideas into production-ready architectural blueprints."
+    },
+    {
+      id: "latency-ai",
+      title: "Latency AI",
+      status: "Prototype",
+      url: "https://latencyai.vercel.app",
+      summary: "A lightweight benchmark tool designed to systematically measure real-time latency across frontier AI models."
+    },
+    {
+      id: "climatex-copilot",
+      title: "ClimateX Copilot",
+      status: "Prototype",
+      url: "https://github.com/iamsuriyakanth/climatex.git",
+      summary: "A multimodal AI agent predicting climate-driven personal risks with real-time analysis and future simulations."
+    },
+    {
+      id: "open-cross-eval",
+      title: "Open Cross-Evaluation",
+      status: "Prototype",
+      url: "https://github.com/iamsuriyakanth/llm-council-plus.git",
+      summary: "An anonymous peer-review system enabling LLMs to evaluate each other for toxicity, bias, and accuracy."
+    },
+    {
+      id: "cupidbrand",
+      title: "CupidBrand",
+      status: "Prototype",
+      url: "https://cupid-brand.vercel.app",
+      summary: "An intelligent personal branding system analyzing user vibes to craft authentic dating personas across platforms."
+    }
+  ],
+
+  about: {
+    text: "I’m a builder focused on impact over outputs. My work centers on evolving AI from a tool that assists into a partner that executes—creating scalable, future-ready systems for early-stage startups and high-growth products."
   },
-  {
-    "id": 2,
-    "period": "Dec 2023 – May 2024",
-    "isCurrent": false,
-    "position": "Developer Intern",
-    "company": "Linx Works (apiplatform.io)",
-    "location": "Bangalore, Karnataka, India",
-    "description": "Developed intelligent systems for an AI-powered conversational analytics assistant. Built NLP → SQL pipelines using transformer models, abstracted multi-dialect SQL execution, and improved query accuracy through iterative customer feedback loops. Enabled real-time data visualization through dynamic charting pipelines integrated into web and mobile applications.",
-    "tags": [
-      "NLP",
-      "LLMs",
-      "SQL Generation",
-      "Transformer Models",
-      "Natural Language Interfaces",
-      "Python",
-      "Backend Development",
-      "Analytics Assistant",
-      "Multi-dialect SQL",
-      "Query Execution Engine",
-      "Data Pipelines",
-      "Chart.js",
-      "D3.js",
-      "Highcharts",
-      "Real-time Visualization"]
-  },
-  {
-    "id": 3,
-    "period": "June 2022 – Dec 2022",
-    "isCurrent": false,
-    "position": "Data Analyst Intern",
-    "company": "Saks Off 5th",
-    "location": "Bangalore, Karnataka, India",
-    "description": "Executed customer analytics projects focusing on segmentation, conversion funnel insights, and churn prediction. Built behavioral cohorts using clustering + RFM, improving targeting effectiveness. Designed attrition models and early-warning KPIs to reduce churn. Identified UX opportunities that improved session time by 19% and strengthened retention strategies across lifecycle campaigns.",
-    "tags": [
-      "Customer Segmentation",
-      "RFM Analysis",
-      "Clustering",
-      "Conversion Funnel Analysis",
-      "Churn Prediction",
-      "Retention Analytics",
-      "Behavioral Insights",
-      "KPI Design",
-      "Attrition Modeling",
-      "E-commerce Analytics",
-      "UX Analytics",
-      "Lifecycle Campaigns",
-      "Engagement Metrics"
-    ]
-  }
-],
   contact: {
-    location: "Tamil Nadu, India",
     email: "iam.suriyakanth@gmail.com",
-    phone: "+91 98405 81941"
+    linkedin: "https://www.linkedin.com/in/suriyakanth2711/",
+    location: "Tamil Nadu, India"
   }
 };
