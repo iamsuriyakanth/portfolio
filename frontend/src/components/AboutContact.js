@@ -7,14 +7,14 @@ import { Button } from './ui/button';
 
 const AboutContact = ({ about, contact }) => {
   return (
-    <Section id="about" className="bg-background pt-32 pb-48">
-      <div className="grid lg:grid-cols-2 gap-24 items-start">
+    <Section id="about" className="bg-background">
+      <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-start">
         {/* Left: Focused Bio */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="space-y-12"
+          className="space-y-8"
         >
           <div className="space-y-6">
             <h2 className="text-4xl font-bold tracking-tight">Systems over outputs.</h2>
@@ -37,12 +37,12 @@ const AboutContact = ({ about, contact }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="p-12 rounded-3xl bg-secondary/30 border border-border flex flex-col items-center text-center group overflow-hidden relative"
+          className="p-8 rounded-3xl bg-secondary/30 border border-border flex flex-col items-center text-center group overflow-hidden relative"
         >
           <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
           <h3 className="text-3xl font-bold mb-6 tracking-tight">Ready to build something ambitious?</h3>
-          <p className="text-muted-foreground mb-10 max-w-xs font-light">
+          <p className="text-muted-foreground mb-6 max-w-xs font-light">
             Building something real with AI or data? Let’s talk.
           </p>
 
@@ -68,8 +68,8 @@ const AboutContact = ({ about, contact }) => {
       </div>
 
       {/* Expansive Footer */}
-      <div className="mt-32 pt-12 border-t border-border">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+      <div className="mt-20 pt-8 border-t border-border">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
           <div className="space-y-4">
             <h4 className="font-bold text-primary">Sitemap</h4>
             <div className="flex flex-col space-y-2">

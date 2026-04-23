@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 
 const PersonalHero = ({ data }) => {
   return (
-    <section className="relative min-h-[90vh] pt-32 pb-24 lg:flex lg:items-center md:pt-40 overflow-hidden bg-background">
+    <section className="relative min-h-[75vh] pt-28 pb-16 lg:flex lg:items-center md:pt-40 overflow-hidden bg-background">
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
 
         {/* Left Content */}
@@ -13,7 +13,7 @@ const PersonalHero = ({ data }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl"
+          className="max-w-2xl lg:pl-8 xl:pl-16"
         >
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -28,11 +28,11 @@ const PersonalHero = ({ data }) => {
             <span className="text-sm font-medium tracking-tight text-foreground/80">Shipping Impact, Not Just Code</span>
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6 text-foreground">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-5 text-foreground">
             {data.headline}
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground font-light mb-10 leading-relaxed max-w-xl">
+          <p className="text-lg md:text-xl text-muted-foreground font-light mb-8 leading-relaxed max-w-xl">
             {data.subtext}
           </p>
 
@@ -46,14 +46,16 @@ const PersonalHero = ({ data }) => {
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
 
-            <a
-              href={data.socialLinks?.linkedin || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center h-14 px-8 text-base font-medium rounded-full border border-border text-foreground hover:bg-secondary/50 transition-colors"
+            <button
+              onClick={() =>
+                window.Calendly?.initPopupWidget({
+                  url: 'https://calendly.com/iamsuriyakanth/30min',
+                })
+              }
+              className="inline-flex items-center justify-center h-14 px-8 text-base font-medium rounded-full border border-border text-foreground hover:bg-secondary/50 transition-colors cursor-pointer"
             >
               Let's Connect
-            </a>
+            </button>
           </div>
         </motion.div>
 
@@ -65,7 +67,7 @@ const PersonalHero = ({ data }) => {
           className="relative flex justify-center items-center mt-12 lg:mt-0 w-full lg:-ml-8"
         >
           {/* Main Container */}
-          <div className="relative w-[18rem] h-[24rem] sm:w-[22rem] sm:h-[28rem] md:w-[26rem] md:h-[32rem]">
+          <div className="relative w-[14rem] h-[19rem] sm:w-[17rem] sm:h-[23rem] md:w-[20rem] md:h-[27rem]">
 
             {/* Background Glow */}
             <div className="absolute inset-x-0 bottom-0 top-1/4 bg-primary/20 blur-[80px] rounded-full" />
@@ -97,7 +99,7 @@ const PersonalHero = ({ data }) => {
 
             {/* Floating UI Element 1: Top Right */}
             <motion.div
-              className="absolute -right-2 md:-right-20 lg:-right-24 -top-6 md:top-16 z-20 bg-background/90 backdrop-blur-xl border border-border px-3 py-2 md:px-4 md:py-3 rounded-xl md:rounded-2xl shadow-xl flex items-center gap-2 md:gap-3 scale-90 md:scale-100 origin-bottom-left"
+              className="absolute -right-2 md:-right-20 lg:-right-24 -top-6 md:top-16 z-20 bg-background/90 backdrop-blur-xl border border-border px-3 py-2 md:px-4 md:py-3 rounded-xl md:rounded-2xl shadow-xl hidden sm:flex items-center gap-2 md:gap-3 scale-90 md:scale-100 origin-bottom-left"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 5, ease: "easeInOut", repeat: Infinity, delay: 1 }}
             >
@@ -112,7 +114,7 @@ const PersonalHero = ({ data }) => {
 
             {/* Floating UI Element 2: Bottom Left */}
             <motion.div
-              className="absolute -left-2 md:-left-20 lg:-left-24 -bottom-6 md:bottom-20 z-20 bg-background/90 backdrop-blur-xl border border-border px-3 py-2 md:px-4 md:py-3 rounded-xl md:rounded-2xl shadow-xl flex items-center gap-2 md:gap-3 scale-90 md:scale-100 origin-top-right"
+              className="absolute -left-2 md:-left-20 lg:-left-24 -bottom-6 md:bottom-20 z-20 bg-background/90 backdrop-blur-xl border border-border px-3 py-2 md:px-4 md:py-3 rounded-xl md:rounded-2xl shadow-xl hidden sm:flex items-center gap-2 md:gap-3 scale-90 md:scale-100 origin-top-right"
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 6, ease: "easeInOut", repeat: Infinity, delay: 0.5 }}
             >

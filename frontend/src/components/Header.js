@@ -30,7 +30,7 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             className="pointer-events-auto"
           >
-            <Link to="/" className="group flex flex-col">
+            <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="group flex flex-col">
               <span className="text-sm font-bold tracking-[0.3em] uppercase">Suriyakanth Raja</span>
             </Link>
           </motion.div>

@@ -1,57 +1,73 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FlaskConical, ChevronRight, Binary, ArrowRight } from 'lucide-react';
+import { FlaskConical, ArrowRight } from 'lucide-react';
 import Section from './Section';
 import { cn } from '../lib/utils';
 
-const LabCard = ({ item, index }) => {
-  const CardWrapper = item.url ? motion.a : motion.div;
-  const wrapperProps = item.url ? { href: item.url, target: "_blank", rel: "noopener noreferrer" } : {};
+const ITEM_H  = 68; // px — row height
+const GAP     = 8;  // px — gap between rows
+const SPEED   = 45; // px per second — consistent regardless of item count
+
+const statusConfig = (status) => {
+  if (status === 'In progress') return { bar: 'bg-amber-500',  badge: 'text-amber-500/75 bg-amber-500/10 border-amber-500/20' };
+  if (status === 'Production')  return { bar: 'bg-primary/60', badge: 'text-primary/60  bg-primary/10  border-primary/20'  };
+  return                               { bar: 'bg-border',     badge: 'text-muted-foreground/45 bg-secondary/20 border-border/50' };
+};
+
+const TickerRow = ({ item }) => {
+  const { bar, badge } = statusConfig(item.status);
+  const Inner = item.url ? 'a' : 'div';
+  const linkProps = item.url ? { href: item.url, target: '_blank', rel: 'noopener noreferrer' } : {};
 
   return (
-    <CardWrapper
-      {...wrapperProps}
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      className="group block p-6 rounded-2xl border border-border bg-card/50 backdrop-blur-sm hover:border-primary/40 hover:bg-secondary/20 transition-all duration-300 cursor-pointer"
+    <Inner
+      {...linkProps}
+      className="group flex items-center gap-4 border border-border/40 rounded-xl bg-card/40 hover:bg-secondary/20 hover:border-primary/25 transition-all duration-200 cursor-pointer px-5 overflow-hidden"
+      style={{ height: ITEM_H, marginBottom: GAP }}
     >
-      <div className="flex items-start justify-between">
-        <div className="flex items-start space-x-4">
-          <div className="p-2 border border-border rounded-lg bg-background mt-1 flex-shrink-0">
-            <Binary size={18} className="text-primary/70 group-hover:text-primary transition-colors" />
-          </div>
-          <div>
-            <h4 className="font-bold text-lg tracking-tight group-hover:text-primary transition-colors">{item.title}</h4>
-            <div className="flex items-center space-x-2 mt-1 mb-4">
-              <span className={cn(
-                "text-[10px] font-mono px-1.5 py-0.5 rounded uppercase tracking-wider",
-                item.status === 'In progress' ? "bg-amber-500/10 text-amber-500" : "bg-primary/10 text-primary/70"
-              )}>
-                {item.status}
-              </span>
-            </div>
-            <p className="text-sm text-muted-foreground font-light leading-relaxed max-w-xl">
-              {item.summary}
-            </p>
-          </div>
-        </div>
+      {/* left status bar */}
+      <div className={cn('w-[3px] rounded-full flex-shrink-0 self-stretch my-4', bar)} />
 
-        <div className="text-muted-foreground/60 mt-1 ml-4 flex-shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary transition-all">
-          <ArrowRight size={20} className="-rotate-45" />
-        </div>
-      </div>
-    </CardWrapper>
+      {/* title */}
+      <span className="text-[15px] font-semibold tracking-tight flex-shrink-0 group-hover:text-primary transition-colors">
+        {item.title}
+      </span>
+
+      {/* summary — fills space, truncates */}
+      <span className="text-[13px] text-muted-foreground/60 font-light flex-1 min-w-0 truncate hidden sm:block">
+        {item.summary}
+      </span>
+
+      {/* status badge */}
+      <span className={cn(
+        'flex-shrink-0 text-[10px] font-mono px-2.5 py-1 rounded-full uppercase tracking-[0.15em] border',
+        badge,
+      )}>
+        {item.status}
+      </span>
+
+      {/* arrow */}
+      {item.url && (
+        <span className="flex-shrink-0 text-muted-foreground/20 group-hover:text-primary text-base transition-colors">↗</span>
+      )}
+    </Inner>
   );
 };
 
 const ThinkingLab = ({ items, isTeaser = false }) => {
-  const visibleItems = isTeaser ? items.slice(0, 3) : items;
+  const n            = items.length;
+  const loopH        = n * (ITEM_H + GAP);          // height of one full set
+  const duration     = loopH / SPEED;               // seconds per loop
+  const tickerHeight = Math.min(loopH, 4 * (ITEM_H + GAP)); // show ≤4 rows
+  const doubled      = [...items, ...items];         // duplicate for seamless loop
+
+  const [paused, setPaused] = useState(false);
 
   return (
     <Section id="lab" className="bg-background/50 relative border-t border-border/50 border-b border-border/10">
-      <div className="flex flex-col lg:flex-row gap-16 lg:items-start">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 lg:items-start">
+
         {/* Left header */}
         <div className="lg:w-1/3">
           <div className="inline-flex items-center space-x-2 text-primary/50 mb-6">
@@ -66,21 +82,39 @@ const ThinkingLab = ({ items, isTeaser = false }) => {
           </p>
         </div>
 
-        {/* Right content list */}
-        <div className="lg:w-2/3">
-          <div className="grid gap-4">
-            <AnimatePresence mode="popLayout">
-              {visibleItems.map((item, i) => (
-                <LabCard key={item.id} item={item} index={i} />
+        {/* Right — infinite ticker */}
+        <div className="lg:w-2/3 flex flex-col gap-6">
+          <div
+            className="relative overflow-hidden"
+            style={{ height: tickerHeight }}
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+          >
+            {/* top fade */}
+            <div className="pointer-events-none absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-background/80 to-transparent z-10" />
+            {/* bottom fade */}
+            <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-background/80 to-transparent z-10" />
+
+            <motion.div
+              animate={{ y: paused ? undefined : [0, -loopH] }}
+              transition={{
+                duration,
+                repeat: Infinity,
+                ease: 'linear',
+                repeatType: 'loop',
+              }}
+            >
+              {doubled.map((item, i) => (
+                <TickerRow key={`${item.id}-${i}`} item={item} />
               ))}
-            </AnimatePresence>
+            </motion.div>
           </div>
 
-          {isTeaser && items.length > 3 && (
+          {isTeaser && (
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              className="mt-12 flex justify-center lg:justify-start"
+              className="flex justify-center lg:justify-start"
             >
               <Link
                 to="/lab"
@@ -92,6 +126,7 @@ const ThinkingLab = ({ items, isTeaser = false }) => {
             </motion.div>
           )}
         </div>
+
       </div>
     </Section>
   );

@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, FlaskConical, Binary } from 'lucide-react';
 import LabGridCard from '../components/LabGridCard';
 import Section from '../components/Section';
 import { portfolioData } from '../mockData';
 
 const LabPage = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -21,13 +23,13 @@ const LabPage = () => {
         {/* Page Header */}
 
         <section className="py-24 max-w-7xl mx-auto relative">
-          <Link 
-            to="/" 
+          <button
+            onClick={() => navigate(-1)}
             className="inline-flex items-center space-x-2 text-xs font-mono tracking-widest text-muted-foreground hover:text-primary transition-colors mb-16 group absolute -top-4 left-0"
           >
             <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
             <span>RETURN TO INDEX</span>
-          </Link>
+          </button>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 mt-8">
             The Thinking Lab.

@@ -33,7 +33,10 @@ const ThemeSwitcher = () => {
           return (
             <button
               key={t.id}
-              onClick={() => setTheme(t.id)}
+              onClick={() => {
+                if (!document.startViewTransition) { setTheme(t.id); return; }
+                document.startViewTransition(() => setTheme(t.id));
+              }}
               className={cn(
                 "relative p-2 rounded-full transition-colors duration-200 focus:outline-none flex items-center justify-center",
                 isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"

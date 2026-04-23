@@ -130,6 +130,13 @@ export const portfolioData = {
   ],
   lab: [
     {
+      id: "newlooktailors",
+      title: "Business Website",
+      status: "Production",
+      url: "https://newlooktailors.com",
+      summary: "Designed and built a website to establish a strong digital presence for a local tailoring business, showcasing services and craftsmanship."
+    },
+    {
       id: "vibe-architect",
       title: "Vibe Architect",
       status: "Production",
@@ -163,7 +170,7 @@ export const portfolioData = {
       status: "Prototype",
       url: "https://cupid-brand.vercel.app",
       summary: "An intelligent personal branding system analyzing user vibes to craft authentic dating personas across platforms."
-    }
+    },
   ],
 
   about: {

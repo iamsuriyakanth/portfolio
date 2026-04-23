@@ -66,6 +66,31 @@
   }
 }
 
+/* ── Theme-switch view transition ── */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-new(root) {
+  animation-name: theme-reveal;
+}
+
+::view-transition-old(root) {
+  animation-name: theme-fade;
+}
+
+@keyframes theme-reveal {
+  from { clip-path: circle(0% at 50% 50%); }
+  to   { clip-path: circle(150% at 50% 50%); }
+}
+
+@keyframes theme-fade {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

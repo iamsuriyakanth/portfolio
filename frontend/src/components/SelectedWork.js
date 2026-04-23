@@ -6,11 +6,11 @@ const SelectedWork = ({ projects, isSubSection = false }) => {
   const Container = isSubSection ? 'div' : Section;
 
   return (
-    <Container id="work" className={isSubSection ? "pt-32" : "bg-background"}>
-      <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+    <Container id="work" className={isSubSection ? "pt-20" : "bg-background"}>
+      <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6 mt-8 md:mt-12">
         <div className="max-w-xl">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Professional Experience</h2>
-          <p className="text-lg text-muted-foreground font-light leading-relaxed">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">Professional Experience</h2>
+          <p className="text-base text-muted-foreground font-light leading-relaxed">
             Evidence of building from scratch, scaling intelligence, and delivering product outcomes.
           </p>
         </div>

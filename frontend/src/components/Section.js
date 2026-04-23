@@ -13,7 +13,7 @@ const Section = ({
     <section 
       id={id}
       className={cn(
-        "relative py-24 md:py-32 overflow-hidden",
+        "relative py-20 md:py-28 overflow-hidden",
         !noPadding && "px-6 md:px-12 lg:px-24",
         className
       )}
